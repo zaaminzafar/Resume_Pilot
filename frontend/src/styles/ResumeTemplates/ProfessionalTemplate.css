@@ -1,0 +1,72 @@
+.professional-template {
+    width: 794px;
+    min-height: 1123px;
+    background: #ffffff;
+
+    padding: 55px 65px;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+.professional-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.professional-header h1 {
+    font-size: 38px;
+    margin: 0;
+    color: #183b56;
+}
+
+.professional-title {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #777;
+}
+
+.professional-contact {
+    text-align: right;
+    font-size: 11px;
+    color: #555;
+}
+
+.professional-contact p {
+    margin: 4px 0;
+}
+
+.professional-line {
+    height: 3px;
+    background: #183b56;
+    margin: 8px 0 35px; 
+}
+
+.professional-template section {
+    margin-bottom: 12px;
+}
+
+.professional-template h2 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #183b56;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+}
+
+.professional-template p {
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.professional-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}

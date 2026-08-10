@@ -1,0 +1,129 @@
+.resume-form{
+
+    width:95%;
+    max-width:1200px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.resume-form h1{
+
+    color:#006241;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.resume-form input,
+.resume-form textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:8px;
+
+    margin-bottom:20px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus{
+
+    outline:none;
+
+    border-color:#006241;
+
+}
+
+.resume-form button{
+
+    background:#006241;
+
+    color:white;
+
+    padding:14px 24px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.resume-form button:hover{
+
+    background:#004d35;
+
+}
+
+.edit-btn {
+    background: #006241;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit-btn:hover {
+    background: #004d35;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background: #006241;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.preview-container {
+    margin-top: 30px;
+    background: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+}
+
+.resume-pdf {
+    width: 794px;
+    height: 1123px;
+    background: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}

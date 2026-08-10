@@ -1,0 +1,74 @@
+.minimal-template {
+    width: 794px;
+    min-height: 1123px;
+
+    background: #fff;
+
+    box-sizing: border-box;
+
+    padding: 65px 80px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    color: #222;
+}
+
+.minimal-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #222;
+}
+
+.minimal-header h1 {
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: -1px;
+
+    margin: 0 0 20px;
+}
+
+.minimal-contact,
+.minimal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #666;
+}
+
+.minimal-links {
+    margin-top: 8px;
+}
+
+.minimal-content {
+    padding-top: 20px;
+}
+
+.minimal-section {
+    margin-bottom: 18px;
+}
+
+.minimal-section h2 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+    color: #006241;
+}
+
+.minimal-section p {
+    font-size: 13px;
+    line-height: 1.8;
+
+    white-space: pre-line;
+}
+
+.minimal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}

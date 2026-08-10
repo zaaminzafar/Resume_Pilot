@@ -1,0 +1,173 @@
+/* ==============================
+   ATS Resume - A4 Layout
+============================== */
+
+.ats-resume {
+    width: 794px;
+    min-height: 1123px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: "Calibri", Arial, sans-serif;
+    color: #222;
+    overflow: hidden;
+}
+
+/* ==============================
+   Header
+============================== */
+
+.ats-header {
+    margin: 0px;
+    text-align: center;
+    border-bottom: 2px solid #006241;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.ats-header h1 {
+    margin: 0px;
+    font-size: 30px;
+    color: #006241;
+    font-weight: bold;
+}
+
+.ats-header h3 {
+    margin: 0px 0 12px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    font-size: 13px;
+    color: #006241;
+}
+
+/* ==============================
+   Sections
+============================== */
+
+.resume-section {
+    margin-top: 18px;
+}
+
+.resume-section h2 {
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    color: #006241;
+    border-bottom: 2px solid #006241;
+    text-transform: uppercase;
+}
+
+.resume-section p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+
+/* ==============================
+   Skills
+============================== */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-badge {
+    background: #d4e9e2;
+    color: #006241;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ==============================
+   Experience & Projects
+============================== */
+
+.experience-card,
+.project-card {
+    margin-top: 5px;
+}
+
+.experience-card ul,
+.project-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.experience-card li,
+.project-card li {
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* ==============================
+   Certifications
+============================== */
+
+.resume-section ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.resume-section li {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+/* ==============================
+   Education
+============================== */
+
+.education-text {
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+/* ==============================
+   Print
+============================== */
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    body {
+        margin: 0;
+        background: white;
+    }
+
+    .ats-resume {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 12mm;
+        border: none;
+        box-shadow: none;
+    }
+
+}

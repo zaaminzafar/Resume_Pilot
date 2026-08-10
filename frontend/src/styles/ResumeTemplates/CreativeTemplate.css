@@ -1,0 +1,116 @@
+.creative-template {
+    width: 794px;
+    min-height: 1123px;
+
+    background: #fff;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+.creative-header {
+    background: #1b2422;
+    color: white;
+
+    padding: 55px 60px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.creative-name span {
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: .6;
+}
+
+.creative-name h1 {
+    font-size: 42px;
+    margin: 10px 0 5px;
+}
+
+.creative-name h3 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.creative-contact {
+    text-align: right;
+    font-size: 11px;
+    opacity: .8;
+}
+
+.creative-contact p {
+    margin: 5px 0;
+}
+
+
+/* CONTENT */
+
+.creative-layout {
+    display: grid;
+
+    grid-template-columns: 230px 1fr;
+
+    min-height: 850px;
+}
+
+.creative-sidebar {
+    background: #f1f3f2;
+
+    padding: 40px 28px;
+}
+
+.creative-sidebar section {
+    margin-bottom: 35px;
+}
+
+.creative-sidebar h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    color: #123c35;
+
+    margin-bottom: 12px;
+}
+
+.creative-sidebar p {
+    font-size: 11px;
+    line-height: 1.7;
+
+    white-space: pre-line;
+}
+
+.creative-main {
+    padding: 45px 45px;
+}
+
+.creative-main section {
+    margin-bottom: 10px;
+}
+
+.creative-main h2 {
+    font-size: 23px;
+
+    color: #123c35;
+
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.creative-main p {
+    font-size: 13px;
+    line-height: 1.8;
+
+    white-space: pre-line;
+}
