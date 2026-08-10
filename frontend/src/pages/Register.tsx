@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiCall } from "../services/api";
 import "../styles/Register.css";
 
 function Register() {
@@ -23,15 +24,10 @@ function Register() {
         setLoading(true);
 
         try {
-            const response = await fetch(
-                "http://localhost:5000/api/register",
+            const data = await apiCall(
+                "/api/register",
                 {
                     method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-
                     body: JSON.stringify({
                         name,
                         email,
@@ -39,15 +35,6 @@ function Register() {
                     }),
                 }
             );
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.message ||
-                        "Registration failed"
-                );
-            }
 
             navigate("/login");
 

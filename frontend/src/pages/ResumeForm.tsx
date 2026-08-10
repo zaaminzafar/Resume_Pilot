@@ -1,4 +1,5 @@
 import html2pdf from "html2pdf.js";
+import { apiCall } from "../services/api";
 
 import ATSResume from "../components/ResumeTemplates/ATSResume";
 import ProfessionalTemplate from "../components/ResumeTemplates/ProfessionalTemplate";
@@ -45,17 +46,11 @@ function ResumeForm() {
 
     const fetchResumes = async () => {
         try {
-            const token = localStorage.getItem("token");
-
-            const response = await fetch("http://localhost:5000/api/resumes", {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
+            const data = await apiCall("/api/resumes", {
+                method: "GET",
             });
 
-            const data = await response.json();
-
-            console.log(data); // Check what the backend returns
+            console.log(data);
 
             setResumes(Array.isArray(data) ? data : []);
 
@@ -85,18 +80,14 @@ function ResumeForm() {
         e.preventDefault();
 
         try {
-            const url = editingId
-                ? `http://localhost:5000/api/resumes/${editingId}`
-                : "http://localhost:5000/api/resumes";
+            const endpoint = editingId
+                ? `/api/resumes/${editingId}`
+                : "/api/resumes";
 
             const method = editingId ? "PUT" : "POST";
 
-            const response = await fetch(url, {
+            const data = await apiCall(endpoint, {
                 method,
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
                 body: JSON.stringify({
                     fullName,
                     email,
@@ -107,11 +98,9 @@ function ResumeForm() {
                 }),
             });
 
-            const data = await response.json();
-
             alert(data.message);
 
-            if (response.ok) {
+            if (data) {
                 setFullName("");
                 setEmail("");
                 setPhone("");
@@ -140,17 +129,12 @@ function ResumeForm() {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(
-                `http://localhost:5000/api/resumes/${id}`,
+            const data = await apiCall(
+                `/api/resumes/${id}`,
                 {
                     method: "DELETE",
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
                 }
             );
-
-            const data = await response.json();
 
             alert(data.message);
 

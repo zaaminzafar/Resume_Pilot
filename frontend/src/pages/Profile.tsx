@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiCall } from "../services/api";
 import "../styles/Profile.css";
 
 interface UserProfile {
@@ -48,23 +49,12 @@ function Profile() {
             }
 
             try {
-                const response = await fetch(
-                    "http://localhost:5000/api/profile",
+                const data = await apiCall(
+                    "/api/profile",
                     {
                         method: "GET",
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
                     }
                 );
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(
-                        data.message || "Failed to load profile"
-                    );
-                }
 
                 setProfile({
                     name: data.name || "",
@@ -130,16 +120,10 @@ function Profile() {
         }
 
         try {
-            const response = await fetch(
-                "http://localhost:5000/api/profile",
+            const data = await apiCall(
+                "/api/profile",
                 {
                     method: "PUT",
-
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-
                     body: JSON.stringify({
                         name: profile.name,
                         email: profile.email,
@@ -147,14 +131,6 @@ function Profile() {
                     }),
                 }
             );
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.message || "Failed to update profile"
-                );
-            }
 
             setProfile({
                 name: data.user.name || "",
@@ -249,16 +225,10 @@ function Profile() {
 
         try {
 
-            const response = await fetch(
-                "http://localhost:5000/api/change-password",
+            const data = await apiCall(
+                "/api/change-password",
                 {
                     method: "PUT",
-
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-
                     body: JSON.stringify({
                         currentPassword:
                             passwordData.currentPassword,
@@ -268,15 +238,6 @@ function Profile() {
                     }),
                 }
             );
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.message ||
-                    "Failed to change password"
-                );
-            }
 
             setPasswordMessage(
                 "Password changed successfully. Please login again."
