@@ -4,6 +4,8 @@ import "../styles/Home.css";
 function Home() {
     const navigate = useNavigate();
 
+    const token = localStorage.getItem("token");
+
     return (
         <div className="home">
 
@@ -23,7 +25,9 @@ function Home() {
 
                     <button
                         className="hero-btn"
-                        onClick={() => navigate("/templates")}
+                        onClick={() =>
+                            token ? navigate("/templates") : navigate("/login")
+                        }
                     >
                         Create Resume
                     </button>
@@ -165,15 +169,21 @@ function Home() {
 
                         <h3>Quick Links</h3>
 
-                        <button onClick={() => navigate("/")}>
-                            Home
-                        </button>
+                        <button onClick={() => navigate("/")}> Home </button>
 
-                        <button onClick={() => navigate("/templates")}>
+                        <button
+                            onClick={() =>
+                                token ? navigate("/templates") : navigate("/login")
+                            }
+                        >
                             Templates
                         </button>
 
-                        <button onClick={() => navigate("/resume")}>
+                        <button
+                            onClick={() =>
+                                token ? navigate("/resume") : navigate("/login")
+                            }
+                        >
                             Create Resume
                         </button>
 

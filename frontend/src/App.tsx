@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Templates from "./pages/Templates";
 import Resume from "./pages/ResumeForm";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
     const location = useLocation();
@@ -41,25 +42,41 @@ function App() {
                     element={<Register />}
                 />
 
-                {/* User Pages */}
+                {/* User Pages (protected) */}
                 <Route
                     path="/dashboard"
-                    element={<Dashboard />}
+                    element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    }
                 />
 
                 <Route
                     path="/profile"
-                    element={<Profile />}
+                    element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    }
                 />
 
                 <Route
                     path="/templates"
-                    element={<Templates />}
+                    element={
+                        <ProtectedRoute>
+                            <Templates />
+                        </ProtectedRoute>
+                    }
                 />
 
                 <Route
                     path="/resume"
-                    element={<Resume />}
+                    element={
+                        <ProtectedRoute>
+                            <Resume />
+                        </ProtectedRoute>
+                    }
                 />
 
             </Routes>
