@@ -13,8 +13,6 @@ function Navbar() {
 
     navigate("/login");
 
-    window.location.reload();
-
   }
 
   return (
