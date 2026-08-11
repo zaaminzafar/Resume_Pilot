@@ -6,30 +6,42 @@ export const registerUser = async (req, res) => {
 
     const { name, email, password } = req.body;
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    if (!name || !email || !password) {
+        return res.status(400).json({
+            message: "Name, email and password are required",
+        });
+    }
 
-    const sql = `
-        INSERT INTO users (name, email, password)
-        VALUES (?, ?, ?)
-    `;
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-    connection.query(
-        sql,
-        [name, email, hashedPassword], // Use hashedPassword here
-        (err, result) => {
+        const sql = `INSERT INTO users (name, email, password) VALUES (?, ?, ?)`;
 
+        connection.query(sql, [name, email, hashedPassword], (err, result) => {
             if (err) {
+                if (err.code === "ER_DUP_ENTRY") {
+                    return res.status(409).json({
+                        message: "Email is already registered",
+                    });
+                }
+
                 return res.status(500).json({
                     message: "Database Error",
-                    error: err
+                    error: err.message || err,
                 });
             }
 
             res.status(201).json({
-                message: "User Registered Successfully"
+                message: "User Registered Successfully",
             });
-        }
-    );
+        });
+    } catch (error) {
+        console.error("Register processing error:", error);
+        res.status(500).json({
+            message: "Registration failed",
+            error: error.message || error,
+        });
+    }
 };
 
 export const loginUser = (req, res) => {
