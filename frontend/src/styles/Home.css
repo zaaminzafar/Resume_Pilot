@@ -478,3 +478,38 @@ body {
 
     font-size: 14px;
 }
+
+/* Extra small screens tweaks */
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 28px;
+    }
+
+    .hero-left p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .hero {
+        padding: 40px 0;
+        gap: 30px;
+    }
+
+    .hero-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .resume-preview {
+        max-width: 320px;
+        width: 90%;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .how-it-works {
+        margin: 40px auto;
+    }
+}

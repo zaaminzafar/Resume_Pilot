@@ -20,4 +20,20 @@ body {
     color: #1e3932;
 }
 
+/* Global responsive helpers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Provide comfortable padding on small screens */
+@media (max-width: 600px) {
+  body {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 15px;
+  }
+}
+
 
