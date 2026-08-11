@@ -31,7 +31,10 @@ export const apiCall = async (
     });
 
     if (!response.ok) {
-        throw new Error(`API Error: ${response.statusText}`);
+        const errorText = await response.text();
+        throw new Error(
+            `API Error: ${response.status} ${response.statusText} - ${errorText}`
+        );
     }
 
     return response.json();
