@@ -1,11 +1,16 @@
 // API Base URL from environment variables
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL =
+    (import.meta.env.VITE_API_URL || "http://localhost:5000")
+        .replace(/\/+$/, "");
 
 export const apiCall = async (
     endpoint: string,
     options: RequestInit = {}
 ) => {
-    const url = `${API_URL}${endpoint}`;
+    const normalizedEndpoint = endpoint.startsWith("/")
+        ? endpoint
+        : `/${endpoint}`;
+    const url = `${API_URL}${normalizedEndpoint}`;
     
     const defaultHeaders: HeadersInit = {
         "Content-Type": "application/json",
