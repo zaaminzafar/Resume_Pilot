@@ -24,7 +24,7 @@ function Register() {
         setLoading(true);
 
         try {
-            const data = await apiCall(
+            await apiCall(
                 "/api/register",
                 {
                     method: "POST",

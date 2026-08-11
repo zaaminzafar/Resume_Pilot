@@ -225,7 +225,7 @@ function Profile() {
 
         try {
 
-            const data = await apiCall(
+            await apiCall(
                 "/api/change-password",
                 {
                     method: "PUT",
