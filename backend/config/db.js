@@ -1,7 +1,22 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
+import dns from "dns";
 
 dotenv.config();
+
+const dbHost = process.env.DB_HOST;
+console.log("DB_HOST:", dbHost);
+if (!dbHost) {
+    console.warn("DB_HOST is not set in environment variables");
+} else {
+    dns.lookup(dbHost, (err, address, family) => {
+        if (err) {
+            console.error("DNS lookup for DB_HOST failed:", err);
+        } else {
+            console.log(`DB_HOST resolves to ${address} (family ${family})`);
+        }
+    });
+}
 
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
