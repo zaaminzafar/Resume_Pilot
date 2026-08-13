@@ -22,7 +22,7 @@ A full-stack web application that allows users to create, customize, and manage 
 ### Backend
 - **Runtime**: Node.js
 - **Framework**: Express.js
-- **Database**: MongoDB (assumed from db.js config)
+- **Database**: MySql
 - **Authentication**: JWT (middleware implemented)
 
 ### Frontend
@@ -75,7 +75,7 @@ resume-builder/
 ### Prerequisites
 - Node.js (v14 or higher)
 - npm or yarn
-- MongoDB (running locally or MongoDB Atlas URI)
+- MySql
 
 ### Backend Setup
 
