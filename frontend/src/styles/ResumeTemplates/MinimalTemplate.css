@@ -1,12 +1,13 @@
 .minimal-template {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     min-height: 1123px;
 
     background: #fff;
 
     box-sizing: border-box;
 
-    padding: 65px 80px;
+    padding: 40px 48px;
 
     font-family: Georgia, "Times New Roman", serif;
     color: #222;
@@ -70,5 +71,11 @@
 .minimal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .minimal-template { padding: 20px; min-height: auto }
+    .minimal-header h1 { font-size: 28px }
+    .minimal-grid { grid-template-columns: 1fr; gap: 12px }
 }

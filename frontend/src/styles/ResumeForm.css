@@ -15,6 +15,10 @@
 
 }
 
+.container {
+    padding: 12px;
+}
+
 .resume-form h1{
 
     color:#006241;
@@ -121,9 +125,65 @@
 }
 
 .resume-pdf {
-    width: 794px;
-    height: 1123px;
+    width: 100%;
+    max-width: 794px;
+    height: auto;
     background: white;
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.download-btn{
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #006241;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.download-btn:hover{ background:#004d35 }
+
+.resume-card{ margin: 12px 0; padding: 12px; border-radius:8px; background:#fafafa }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .resume-form{
+        padding:16px;
+        margin:16px;
+        border-radius:10px;
+    }
+
+    .resume-form h1{ font-size:1.4rem }
+
+    .resume-form input,
+    .resume-form textarea{
+        padding:10px;
+        font-size:14px;
+    }
+
+    .preview-container{
+        padding:12px;
+        margin-top:18px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Adjust PDF preview to fit mobile screens */
+    .resume-pdf{
+        width:100%;
+        height:auto;
+        max-width:100%;
+        transform: none;
+    }
+
+    .save-btn, .download-btn, .edit-btn, .delete-btn{
+        width:100%;
+        margin-top:8px;
+    }
+
+    .edit-btn{ margin-right:0 }
+
 }

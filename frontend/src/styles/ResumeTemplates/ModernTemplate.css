@@ -1,5 +1,6 @@
 .modern-template {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     min-height: 1123px;
 
     display: grid;
@@ -82,7 +83,15 @@
 /* MAIN */
 
 .modern-main {
-    padding: 55px 45px;
+    padding: 45px 30px;
+}
+
+@media (max-width: 768px) {
+    .modern-template { grid-template-columns: 1fr; padding: 12px; min-height: auto }
+    .modern-sidebar { padding: 18px }
+    .modern-main { padding: 18px }
+    .modern-avatar { width: 58px; height: 58px; font-size: 24px }
+    .modern-sidebar h2 { font-size: 20px }
 }
 
 .modern-main section {

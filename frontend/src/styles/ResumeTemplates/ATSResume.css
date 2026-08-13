@@ -3,11 +3,12 @@
 ============================== */
 
 .ats-resume {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     min-height: 1123px;
     margin: auto;
     background: #ffffff;
-    padding: 30px;
+    padding: 20px;
     box-sizing: border-box;
     font-family: "Calibri", Arial, sans-serif;
     color: #222;
@@ -55,6 +56,12 @@
     gap: 6px;
     font-size: 13px;
     color: #006241;
+}
+
+@media (max-width: 768px) {
+    .ats-resume { padding: 12px; min-height: auto }
+    .contact-info, .contact-links { grid-template-columns: 1fr }
+    .resume-section h2 { font-size: 14px }
 }
 
 /* ==============================

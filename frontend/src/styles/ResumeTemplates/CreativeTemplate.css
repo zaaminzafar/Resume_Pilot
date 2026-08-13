@@ -1,5 +1,6 @@
 .creative-template {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     min-height: 1123px;
 
     background: #fff;
@@ -18,12 +19,13 @@
     background: #1b2422;
     color: white;
 
-    padding: 55px 60px;
+    padding: 40px 32px;
 
     display: flex;
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .creative-name span {
@@ -67,7 +69,7 @@
 .creative-sidebar {
     background: #f1f3f2;
 
-    padding: 40px 28px;
+    padding: 24px 18px;
 }
 
 .creative-sidebar section {
@@ -92,7 +94,16 @@
 }
 
 .creative-main {
-    padding: 45px 45px;
+    padding: 30px 24px;
+}
+
+@media (max-width: 768px) {
+    .creative-template { min-height: auto }
+    .creative-layout { grid-template-columns: 1fr }
+    .creative-header { padding: 18px }
+    .creative-sidebar { padding: 12px }
+    .creative-main { padding: 12px }
+    .creative-name h1 { font-size: 28px }
 }
 
 .creative-main section {

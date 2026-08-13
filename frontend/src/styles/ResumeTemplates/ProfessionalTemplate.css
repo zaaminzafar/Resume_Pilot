@@ -1,9 +1,10 @@
 .professional-template {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     min-height: 1123px;
     background: #ffffff;
 
-    padding: 55px 65px;
+    padding: 40px;
     box-sizing: border-box;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +14,8 @@
 .professional-header {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .professional-header h1 {
@@ -68,5 +70,19 @@
 .professional-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 45px;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .professional-template {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .professional-header h1 { font-size: 24px }
+    .professional-title { font-size: 11px }
+
+    .professional-contact { text-align: left; margin-top: 8px }
+
+    .professional-columns { grid-template-columns: 1fr; gap: 12px }
 }
