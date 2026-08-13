@@ -52,12 +52,19 @@ router.get("/health", (req, res) => {
     // Test database connection
     connection.query("SELECT 1", (err) => {
         if (err) {
-            console.error("❌ Database connection check failed:", err.message);
+            console.error("❌ Database connection check failed:", err);
+            const errDetails = {
+                message: err.message,
+                code: err.code,
+                errno: err.errno,
+                sqlState: err.sqlState,
+                stack: err.stack,
+            };
             return res.status(500).json({
                 status: "error",
                 message: "Database connection failed",
                 database: "disconnected",
-                error: err.message,
+                error: errDetails,
                 timestamp: new Date().toISOString(),
             });
         }
