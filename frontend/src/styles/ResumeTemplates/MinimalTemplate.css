@@ -79,3 +79,9 @@
     .minimal-header h1 { font-size: 28px }
     .minimal-grid { grid-template-columns: 1fr; gap: 12px }
 }
+
+@media (max-width: 480px) {
+    .minimal-template { padding: 12px }
+    .minimal-header h1 { font-size: 22px }
+    .minimal-section p { font-size: 13px }
+}

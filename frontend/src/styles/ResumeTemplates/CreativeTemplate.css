@@ -106,6 +106,13 @@
     .creative-name h1 { font-size: 28px }
 }
 
+@media (max-width: 480px) {
+    .creative-header { flex-direction: column; align-items: flex-start; gap: 8px }
+    .creative-name h1 { font-size: 22px }
+    .creative-contact { font-size: 12px }
+    .creative-main p { font-size: 13px }
+}
+
 .creative-main section {
     margin-bottom: 10px;
 }

@@ -94,6 +94,14 @@
     .modern-sidebar h2 { font-size: 20px }
 }
 
+@media (max-width: 480px) {
+    .modern-template { padding: 10px }
+    .modern-avatar { width: 48px; height: 48px; font-size: 20px }
+    .modern-sidebar h2 { font-size: 18px }
+    .modern-main h2 { font-size: 18px }
+    .modern-contact p, .modern-main p { font-size: 13px }
+}
+
 .modern-main section {
     margin-bottom: 16px;
 }

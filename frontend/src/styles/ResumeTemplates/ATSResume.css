@@ -64,6 +64,13 @@
     .resume-section h2 { font-size: 14px }
 }
 
+@media (max-width: 480px) {
+    .ats-resume { padding: 10px }
+    .ats-header h1 { font-size: 22px }
+    .ats-header h3 { font-size: 14px }
+    .resume-section p, .experience-card li, .project-card li { font-size: 13px }
+}
+
 /* ==============================
    Sections
 ============================== */
